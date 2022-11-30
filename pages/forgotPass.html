@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="icon" href="../image/logo.jpg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Register</title>
+</head>
+<style>
+
+    @media (max-width: 1250px) {
+        .media {
+            height: auto;
+        }
+    }
+        
+    
+</style>
+
+<body>
+    <div class="lg:flex">
+        <div class="lg:w-1/2 xl:max-w-screen-sm h-screen media">
+            <div class="py-6 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
+                <div class="cursor-pointer flex items-center">
+                    <div class="logo">
+                        <img src="../image/logo.png" alt="" />
+                    </div>
+                    <div class="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold">
+                        Hiệu thuốc Phương Thảo
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-6 xl:px-24 xl:max-w-2xl">
+                <h2
+                    class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl xl:text-bold">
+                    Đặt lại mật khẩu
+                </h2>
+                <div class="mt-12">
+                    <form>
+                        <div>
+                            <div class="text-sm font-bold text-gray-700 tracking-wide">
+                                Địa chỉ Email của bạn
+                            </div>
+                            <input
+                                class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                type="" />
+                        </div>
+                        <div class="mt-8">
+                            <div class="flex justify-between items-center">
+                                <div class="text-sm font-bold text-gray-700 tracking-wide">
+                                    Mật Khẩu
+                                </div>
+                            </div>
+                            <input
+                                class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                type="" />
+                        </div>
+                        <div class="mt-8">
+                            <div class="text-sm font-bold text-gray-700 tracking-wide">
+                                Xác nhận mật khẩu
+                            </div>
+                            <input
+                                class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                type="confirm-password" />
+                        </div>
+                        <div class="mt-6">
+                            <button
+                                class="bg-blue-600 text-gray-100 p-4 w-full rounded-full tracking-wide font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-blue-700 shadow-lg">
+                                Đặt lại mật khẩu
+                            </button>
+                        </div>
+                    </form>
+                    <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
+                        <a href="../index.html" class="cursor-pointer text-indigo-600 hover:text-indigo-800">Trở về
+                            đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden lg:flex items-center justify-center bg-indigo-100 flex-1 h-screen">
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_mact0td5.json" background="transparent"
+                speed="1" style="width: auto; height: 95%" loop autoplay></lottie-player>
+        </div>
+    </div>
+</body>
+
+</html>

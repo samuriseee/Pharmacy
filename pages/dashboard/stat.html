@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <title>Stat</title>
+</head>
+<style>
+    
+  </style>
+<body>
+    <div x-data="setup()" :class="{ 'light': islight }">
+        <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white light:bg-gray-700 text-black light:text-white">
+    
+          <!-- Header -->
+          <div class="fixed w-full flex items-center justify-between h-14 text-white z-10">
+            <div
+                class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 light:bg-gray-800 border-none">
+                <span class="leading-10 text-gray-100 text-2xl font-bold ml-1 uppercase hidden md:block">Phương
+                    Thảo</span>
+            </div>
+            <div class="flex justify-between items-center h-14 bg-white shadow light:bg-gray-800 header-right">
+                <div></div>
+                <ul class="flex items-center justify-end">
+                    <li>
+                        <div class="flex ml-auto">
+                            <a href class="flex flex-row items-center">
+                                <img src="https://pbs.twimg.com/profile_images/378800000298815220/b567757616f720812125bfbac395ff54_normal.png"
+                                    alt class="h-10 w-10 bg-gray-200 border rounded-full" />
+                                <span class="flex flex-col ml-2 text-gray-800">
+                                    <span class="truncate w-20 font-semibold tracking-wide leading-none">Như</span>
+                                    <span class="truncate w-20 text-xs leading-none mt-1">Quản
+                                        lý</span>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <a href="../../index.html" class="flex items-center mr-4 text-gray-800 hover:text-gray-500">
+                            <span class="inline-flex mr-1">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                                    </path>
+                                </svg>
+                            </span>
+                            Đăng xuất
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+          <!-- ./Header -->
+        
+          <!-- Sidebar -->
+          <div
+          class="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-blue-900 light:bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
+          <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
+              <ul class="flex flex-col py-4 space-y-1">
+                  <li class="px-5 hidden md:block">
+                      <div class="flex flex-row items-center h-8">
+                          <div class="text-sm font-light tracking-wide text-gray-400 uppercase"></div>
+                      </div>
+                  </li>
+                  <li>
+                      <a href="./stat.html"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                  </path>
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Thống kê</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="./sale.html"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5">
+                                  <path
+                                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Bán Hàng</span>
+
+                      </a>
+                  </li>
+                  <li>
+                      <a href="./medicine.html"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5">
+                                  <path
+                                      d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Sản phẩm</span>
+
+                      </a>
+                  </li>
+                  <li>
+                      <a href="./employee.html"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5">
+                                  <path
+                                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Nhân viên</span>
+
+                      </a>
+                  </li>
+                  <li>
+                      <a href="./stock.html"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5">
+                                  <path
+                                      d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Tồn kho</span>
+
+                      </a>
+                  </li>
+                  <li>
+                      <a href="./receipt.html"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                                  </path>
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Nhập hàng</span>
+                          <span
+                              class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-indigo-50 rounded-full">Mới</span>
+                      </a>
+                  </li>
+
+
+                  <li class="px-5 hidden md:block">
+                      <div class="flex flex-row items-center mt-5 h-8">
+                          <div class="text-sm font-light tracking-wide text-gray-400 uppercase"></div>
+                      </div>
+                  </li>
+                  <li>
+                      <a href="#"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Trang cá nhân</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                                  </path>
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Tin nhắn</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                  </path>
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Thông báo</span>
+                          <span
+                              class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">40</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#"
+                          class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 light:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 light:hover:border-gray-800 pr-6">
+                          <span class="inline-flex justify-center items-center ml-4">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                  </path>
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                              </svg>
+                          </span>
+                          <span class="ml-2 text-sm tracking-wide truncate">Cài đặt</span>
+                      </a>
+                  </li>
+              </ul>
+
+          </div>
+      </div>
+          <!-- ./Sidebar -->
+        
+          <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+        
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-4">
+                <div class="flex items-center px-6 py-8 bg-white rounded-lg shadow-md shadow-gray-200 ">
+                    <div class="flex items-center -mx-2">
+                        <svg class="mx-2" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="35" cy="35" r="35" fill="#713BDB" fill-opacity="0.05"></circle>
+                            <path d="M26 44C26 40.625 30.5 40.625 32.75 38.375C33.875 37.25 30.5 37.25 30.5 31.625C30.5 27.8754 31.9996 26 35 26C38.0004 26 39.5 27.8754 39.5 31.625C39.5 37.25 36.125 37.25 37.25 38.375C39.5 40.625 44 40.625 44 44" stroke="#6F52ED" stroke-width="2" stroke-linecap="square"></path>
+                        </svg>
+    
+                        <div class="mx-2">
+                            <h3 class="text-2xl font-medium text-gray-800">40</h3>
+                            <p class="mt-1 text-sm text-gray-500">Nhân viên</p>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="flex items-center px-6 py-8 bg-white rounded-lg shadow-md shadow-gray-200 ">
+                    <div class="flex items-center -mx-2">
+                        <svg class="mx-2" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="35" cy="35" r="35" fill="#33D69F" fill-opacity="0.07"></circle>
+                            <path d="M26 39L31 34" stroke="#21B8C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M32 34C32.5523 34 33 33.5523 33 33C33 32.4477 32.5523 32 32 32C31.4477 32 31 32.4477 31 33C31 33.5523 31.4477 34 32 34Z" stroke="#21B8C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M37 39C37.5523 39 38 38.5523 38 38C38 37.4477 37.5523 37 37 37C36.4477 37 36 37.4477 36 38C36 38.5523 36.4477 39 37 39Z" stroke="#21B8C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M38 37L44 31M33 34L36 37L33 34Z" stroke="#21B8C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+    
+                        <div class="mx-2">
+                            <h3 class="text-2xl font-medium text-gray-800">4.5%</h3>
+                            <p class="mt-1 text-sm text-gray-500">Tỷ lệ chuyển đổi</p>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="flex items-center px-6 py-8 bg-white rounded-lg shadow-md shadow-gray-200 ">
+                    <div class="flex items-center -mx-2">
+                        <svg class="mx-2" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="35" cy="35" r="35" fill="#FF4C61" fill-opacity="0.05"></circle>
+                            <path d="M26 32L32 38L36 34L43.405 41.405" stroke="#FF4C61" stroke-width="2" stroke-linecap="square"></path>
+                            <path d="M43.405 41.405L44 42" stroke="#FF4C61" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M44 39V42H41" stroke="#FF4C61" stroke-width="2" stroke-linecap="square"></path>
+                        </svg>
+    
+                        <div class="mx-2">
+                            <h3 class="text-2xl font-medium text-gray-800">9 <span class="text-xl text-gray-600">(14%)</span></h3>
+                            <p class="mt-1 text-sm text-gray-500">Giao dịch không thành công</p>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="flex items-center px-6 py-8 bg-white rounded-lg shadow-md shadow-gray-200 ">
+                    <div class="flex items-center -mx-2">
+                        <svg class="mx-2" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="35" cy="35" r="35" fill="#4CB8FF" fill-opacity="0.07"></circle>
+                            <path d="M42 26V44H31C30.2044 44 29.4413 43.6839 28.8787 43.1213C28.3161 42.5587 28 41.7956 28 41V29C28 28.2044 28.3161 27.4413 28.8787 26.8787C29.4413 26.3161 30.2044 26 31 26H42Z" stroke="#4CB8FF" stroke-width="2" stroke-linecap="square"></path>
+                            <path d="M28 41C28 40.2044 28.3161 39.4413 28.8787 38.8787C29.4413 38.3161 30.2044 38 31 38H42" stroke="#4CB8FF" stroke-width="2" stroke-linecap="square"></path>
+                        </svg>
+    
+                        <div class="mx-2">
+                            <h3 class="text-2xl font-medium text-gray-800">92%</h3>
+                            <p class="mt-1 text-sm text-gray-500">Độ hài lòng của khách</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <!-- Task Summaries -->
+            <section class="grid grid-cols-1 gap-8 px-4 xl:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2 ">
+  
+                <div class="flex flex-col justify-center px-8 py-6 bg-white rounded-lg shadow-md shadow-gray-200 md:col-span-2 md:row-span-2 gap-y-4 gap-x-8 ">
+                    <div class="sm:flex sm:items-center sm:justify-between">
+                        <h2 class="font-medium text-gray-700">Doanh thu theo tháng</h2>
+  
+                        <div class="flex items-center mt-4 -mx-2 sm:mt-0">
+                            <span class="flex items-center text-gray-600">
+                                <p class="mx-2">Thu nhập</p>
+                                
+                                <span class="w-2 h-2 mx-2 bg-orange-500 rounded-full"></span>
+                            </span>
+  
+                            <span class="flex items-center text-gray-600">
+                                <p class="mx-2">Chi tiêu</p>
+                                <span class="w-2 h-2 mx-2 bg-indigo-500 rounded-full"></span>
+                            </span>
+                        </div>
+                    </div>
+  
+                    <canvas class="max-w-3xl max-h-96" id="secondChart" style="display: block; box-sizing: border-box; height: 384px; width: 768px;" width="1536" height="768"></canvas>
+                </div>
+  
+  
+                <div class=" bg-white rounded-lg shadow-md shadow-gray-200 lg:row-span-2">
+                    <div class="px-6 py-5 border-b border-gray-100">
+                        <h2 class="font-medium text-gray-700">Loại thuốc bán chạy</h2>
+                    </div>
+  
+                    <div class="flex items-center p-8">
+                        <canvas class="max-w-sm" id="myChart" style="display: block; box-sizing: border-box; height: 267px; width: 267px;" width="534" height="534"> </canvas>
+                    </div>
+                </div>
+  
+                <div class="flex items-center px-6 py-8 bg-white rounded-lg shadow-md shadow-gray-200 ">
+                    <div class="flex items-center -mx-2">
+                        <svg class="mx-2" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="35" cy="35" r="35" fill="#FFB800" fill-opacity="0.07"></circle>
+                            <path d="M30 44H40M29 25H41V34C41 37.3137 38.3137 40 35 40C31.6863 40 29 37.3137 29 34V25Z" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M35 40V44" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M29 28V34H28C26.3431 34 25 32.6569 25 31C25 29.3431 26.3431 28 28 28H29ZM41 34V28H42C43.6569 28 45 29.3431 45 31C45 32.6569 43.6569 34 42 34H41Z" stroke="#FFB800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+    
+                        <div class="mx-2">
+                            <h3 class="text-2xl font-medium text-gray-800">5</h3>
+                            <p class="mt-1 text-sm text-gray-500">Thành tựu</p>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="flex items-center px-6 py-8 bg-white rounded-lg shadow-md shadow-gray-200 ">
+                    <div class="flex items-center -mx-2">
+                        <svg class="mx-2" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="35" cy="35" r="35" fill="#4CB8FF" fill-opacity="0.07"></circle>
+                            <path d="M35 45C40.5228 45 45 40.5228 45 35C45 29.4772 40.5228 25 35 25C29.4772 25 25 29.4772 25 35C25 40.5228 29.4772 45 35 45Z" stroke="#4CB8FF" stroke-width="2" stroke-linecap="square"></path>
+                            <path d="M35 28V35L39 39" stroke="#4CB8FF" stroke-width="2" stroke-linecap="square"></path>
+                        </svg>
+                        <div class="mx-2">
+                            <h3 class="text-2xl font-medium text-gray-800">1390</h3>
+                            <p class="mt-1 text-sm text-gray-500">Giờ hoạt động</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ./Task Summaries -->
+        
+            <div class="mt-4 mx-4">
+              <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                <div class="w-full overflow-x-auto">
+                  <table class="w-full">
+                    <thead>
+                      <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b light:border-gray-700 bg-gray-50 light:text-gray-400 light:bg-gray-800">
+                        <th class="px-4 py-3">Tên</th>
+                        <th class="px-4 py-3">Số tiền</th>
+                        <th class="px-4 py-3">Trạng thái</th>
+                        <th class="px-4 py-3">Ngày</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y light:divide-gray-700 light:bg-gray-800">
+                      <tr class="bg-gray-50 light:bg-gray-800 hover:bg-gray-100 light:hover:bg-gray-900 text-gray-700 light:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <div>
+                              <p class="font-semibold">Doanh thu tháng 10</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">85.850.000</td>
+                        <td class="px-4 py-3 text-xs">
+                          <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full light:bg-green-700 light:text-green-100"> Thu nhập </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">31-10-2022</td>
+                      </tr>       
+                      <tr class="bg-gray-50 light:bg-gray-800 hover:bg-gray-100 light:hover:bg-gray-900 text-gray-700 light:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <div>
+                              <p class="font-semibold">Nhập hàng tháng 11</p>
+                              <p class="text-xs text-gray-600 light:text-gray-400">Công ty dược Traphaco</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">86.000.000</td>
+                        <td class="px-4 py-3 text-xs">
+                          <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full light:text-red-100 light:bg-red-700"> Chi tiêu </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">31-10-2022</td>
+                      </tr>
+                      <tr class="bg-gray-50 light:bg-gray-800 hover:bg-gray-100 light:hover:bg-gray-900 text-gray-700 light:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <div>
+                              <p class="font-semibold">Doanh thu tháng 10</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">85.850.000</td>
+                        <td class="px-4 py-3 text-xs">
+                          <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full light:bg-green-700 light:text-green-100"> Thu nhập </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">31-10-2022</td>
+                      </tr>       
+                      <tr class="bg-gray-50 light:bg-gray-800 hover:bg-gray-100 light:hover:bg-gray-900 text-gray-700 light:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <div>
+                              <p class="font-semibold">Nhập hàng tháng 11</p>
+                              <p class="text-xs text-gray-600 light:text-gray-400">Công ty dược Traphaco</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">86.000.000</td>
+                        <td class="px-4 py-3 text-xs">
+                          <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full light:text-red-100 light:bg-red-700"> Chi tiêu </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">31-10-2022</td>
+                      </tr>
+                      <tr class="bg-gray-50 light:bg-gray-800 hover:bg-gray-100 light:hover:bg-gray-900 text-gray-700 light:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <div>
+                              <p class="font-semibold">Doanh thu tháng 10</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">85.850.000</td>
+                        <td class="px-4 py-3 text-xs">
+                          <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full light:bg-green-700 light:text-green-100"> Thu nhập </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">31-10-2022</td>
+                      </tr>       
+                      <tr class="bg-gray-50 light:bg-gray-800 hover:bg-gray-100 light:hover:bg-gray-900 text-gray-700 light:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <div>
+                              <p class="font-semibold">Nhập hàng tháng 11</p>
+                              <p class="text-xs text-gray-600 light:text-gray-400">Công ty dược Traphaco</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">86.000.000</td>
+                        <td class="px-4 py-3 text-xs">
+                          <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full light:text-red-100 light:bg-red-700"> Chi tiêu </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">31-10-2022</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t light:border-gray-700 bg-gray-50 sm:grid-cols-9 light:text-gray-400 light:bg-gray-800">
+                  <span class="flex items-center col-span-3"> </span>
+                  <span class="col-span-2"></span>
+                  <!-- Pagination -->
+                  <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                    <nav aria-label="Table navigation">
+                      <ul class="inline-flex items-center">
+                        <li>
+                          <button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple" aria-label="Previous">
+                            <svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                              <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                            </svg>
+                          </button>
+                        </li>
+                        <li>
+                          <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">1</button>
+                        </li>
+                        <li>
+                          <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">2</button>
+                        </li>
+                        <li>
+                          <button class="px-3 py-1 text-white light:text-gray-800 transition-colors duration-150 bg-blue-600 light:bg-gray-100 border border-r-0 border-blue-600 light:border-gray-100 rounded-md focus:outline-none focus:shadow-outline-purple">3</button>
+                        </li>
+                        <li>
+                          <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">4</button>
+                        </li>
+                        <li>
+                          <span class="px-3 py-1">...</span>
+                        </li>
+                        <li>
+                          <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">8</button>
+                        </li>
+                        <li>
+                          <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">9</button>
+                        </li>
+                        <li>
+                          <button class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple" aria-label="Next">
+                            <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                              <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                            </svg>
+                          </button>
+                        </li>
+                      </ul>
+                    </nav>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- ./External resources -->
+          </div>
+        </div>
+      </div>   
+      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/combine/npm/chart.js@4.0.1/dist/chart.min.js,npm/chart.js@4.0.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+        <script src="../../js/dashboard.js"></script>
+        <script src="../../js/chartCofig.js"></script>
+      <script>
+        
+      </script>
+</body>
+
+</html>
